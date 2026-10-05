@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plainmark | AI brand audit, opening soon</title>
+<meta name="description" content="Plainmark scores your brand from 0 to 100 and names the three problems to fix first. Join the waitlist.">
+<meta property="og:title" content="Plainmark | AI brand audit">
+<meta property="og:description" content="See how your brand reads to a stranger. Join the waitlist.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600;700&family=Caveat:wght@600&display=swap">
+<style>
+:root{--bg:#F7F8F9;--panel:#FFFFFF;--ink:#121826;--muted:#4A5262;--line:#D9DDE3;--pen:#C62828;--pen-dark:#B42318;--pen-tint:#FDECEC;--focus:#1F4FD8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ink)}
+a:hover{color:var(--pen)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:24px}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;margin:0;text-wrap:balance}
+h1{font-weight:700;font-size:clamp(40px,6vw,74px);line-height:1.02;letter-spacing:-0.025em}
+h2{font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-0.02em}
+header{background:var(--panel);border-bottom:1px solid var(--line)}
+.bar{min-height:72px;display:flex;align-items:center}
+.logo{font:800 26px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-0.02em;text-decoration:none}
+.logo span{display:inline-block;border-bottom:3px solid var(--pen)}
+.hero{display:flex;flex-wrap:wrap;gap:56px 64px;align-items:center;padding-block:72px}
+.hero-text{flex:1 1 440px;min-width:0}
+.hero-text p.lead{margin:24px 0 0;color:var(--muted);font-size:19px;max-width:34em}
+form{margin-top:32px;max-width:580px}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+label.t{display:block;width:100%;font-weight:600;font-size:15px}
+input[type=email],input[type=text]{flex:1 1 260px;min-width:0;height:56px;padding:0 18px;font:inherit;font-size:18px;border:1.5px solid var(--ink);border-radius:6px;background:var(--panel);color:var(--ink)}
+button{height:56px;padding:0 26px;background:var(--ink);color:#fff;font:600 17px 'Instrument Sans',sans-serif;border:0;border-radius:6px;cursor:pointer}
+button:disabled{opacity:.6;cursor:default}
+.consent{display:flex;gap:12px;align-items:flex-start;margin-top:14px;font-size:15px;color:var(--muted);line-height:1.5}
+.consent input{width:22px;height:22px;margin:2px 0 0;flex:0 0 auto}
+.hp{position:absolute;left:-5000px;height:0;width:0;overflow:hidden}
+#status{margin:14px 0 0;font-size:16px;font-weight:600;min-height:1.5em}
+#status.ok{color:#1B5E3F}
+#status.err{color:var(--pen-dark)}
+.small{font-size:15px;color:#5A6270}
+
+/* sample page */
+.sample{flex:1 1 360px;min-width:0;max-width:560px}
+.win{background:var(--panel);border:1px solid #C5CAD3;border-radius:8px;position:relative}
+.win .top{padding:10px 16px;border-bottom:1px solid #E3E6EB;font-size:13px;color:#5A6270}
+.win .body{padding:18px 22px 26px}
+.nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;font-size:14px;color:var(--muted)}
+.nav b{font:700 16px 'Bricolage Grotesque',sans-serif;color:var(--ink)}
+.rel{position:relative;display:inline-block;max-width:100%}
+.sh{font:700 clamp(26px,4vw,38px)/1.08 'Bricolage Grotesque',sans-serif;letter-spacing:-0.02em;padding:2px 4px}
+.circle{position:absolute;inset:-8px -12px -8px -10px;border:2.5px solid var(--pen);border-radius:50%;transform:rotate(-1.5deg)}
+.note{position:absolute;font:600 23px/1 'Caveat',cursive;color:var(--pen);white-space:nowrap}
+.btn-sample{background:#CDBBA6;color:#fff;font-weight:600;font-size:15px;padding:12px 22px;border-radius:4px}
+.ul{position:absolute;left:0;right:0;bottom:-7px;border-bottom:2.5px solid var(--pen);transform:rotate(-1deg)}
+.chip{position:absolute;right:16px;bottom:-22px;background:var(--ink);color:#fff;border-radius:6px;padding:10px 16px;display:flex;align-items:baseline;gap:10px}
+.chip b{font:800 32px/1 'Bricolage Grotesque',sans-serif}
+
+section.block{padding-block:80px;border-top:1px solid var(--line)}
+section.alt{background:var(--panel)}
+.weights{display:flex;gap:3px;height:16px;margin-top:32px}
+.weights div{background:var(--ink)}
+.weights div.ai{background:var(--pen)}
+.list{margin-top:12px}
+.item{display:flex;flex-wrap:wrap;gap:6px 24px;padding:18px 0;border-top:1px solid var(--line)}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item .n{flex:0 0 240px;font-weight:700;font-size:18px}
+.item .w{flex:0 0 56px;font-weight:700;font-variant-numeric:tabular-nums}
+.item .d{flex:1 1 300px;min-width:0;color:var(--muted)}
+.cols{display:flex;flex-wrap:wrap;gap:40px 64px;margin-top:32px}
+.cols>div{flex:1 1 340px;min-width:0}
+.cols h3{font-size:22px;margin-bottom:14px}
+.cols ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px;color:#2B3342}
+footer{border-top:1px solid var(--line);padding-block:40px 56px;font-size:15px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:10px 24px}
+footer .brand{font:800 22px 'Bricolage Grotesque',sans-serif;color:var(--ink);margin:0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top"><span>Plainmark</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div class="hero-text">
+      <h1>See how your brand reads to a stranger.</h1>
+      <p class="lead">Plainmark is an AI brand audit. Paste your website and get a Brand Score from 0 to 100, plus the three problems to fix first. We are opening soon.</p>
+
+      <form id="waitlist" novalidate>
+        <div class="row">
+          <label class="t" for="email">Email for the opening announcement</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com" required>
+          <button id="submit" type="submit">Join the waitlist</button>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="company">Leave this field empty</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="consent">
+          <input id="consent" name="consent" type="checkbox" required>
+          <label for="consent">I agree to the <a href="#footer">Privacy Policy</a> and want one email when Plainmark opens. I can unsubscribe at any time.</label>
+        </div>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="small" style="margin:8px 0 0">Free Brand Score at launch. No card needed.</p>
+    </div>
+
+    <div class="sample">
+      <div class="win">
+        <div class="top">marlowfinch.example</div>
+        <div class="body">
+          <div class="nav"><b>Marlow &amp; Finch</b><span>Shop &nbsp; Studio &nbsp; Journal</span></div>
+          <div style="padding-top:46px">
+            <div class="rel">
+              <div class="sh">Pots for slow mornings</div>
+              <div class="circle"></div>
+              <div class="note" style="right:-6px;top:-46px;transform:rotate(-3deg)">Nice line. For whom?</div>
+            </div>
+          </div>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:7px">
+            <div style="height:8px;width:92%;background:#E3E6EB;border-radius:4px"></div>
+            <div style="height:8px;width:78%;background:#E3E6EB;border-radius:4px"></div>
+          </div>
+          <div class="rel" style="margin-top:26px">
+            <div class="btn-sample">Shop the collection</div>
+            <div class="ul"></div>
+            <div class="note" style="left:calc(100% + 12px);top:2px;font-size:22px;transform:rotate(-2deg);width:130px;white-space:normal">white on tan is hard to read</div>
+          </div>
+          <div style="margin-top:28px;display:flex;gap:10px">
+            <div style="flex:1;height:86px;background:#D8CBB8;border-radius:4px"></div>
+            <div style="flex:1;height:86px;background:#BFC9C4;border-radius:4px"></div>
+            <div style="flex:1;height:86px;background:#E5D9C7;border-radius:4px"></div>
+          </div>
+        </div>
+        <div class="chip"><span style="font-size:13px;font-weight:500">Brand Score</span><b>64</b></div>
+      </div>
+      <p class="small" style="margin:40px 0 0">Sample audit of a fictional shop.</p>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <h2>What the score is made of</h2>
+      <p style="margin:16px 0 0;color:var(--muted);max-width:40em">Seven weighted groups. Every point must be backed by something found on your site.</p>
+      <div class="weights" aria-hidden="true">
+        <div style="flex:20 1 0"></div><div style="flex:15 1 0"></div><div style="flex:10 1 0"></div><div style="flex:15 1 0"></div><div style="flex:15 1 0"></div><div style="flex:10 1 0"></div><div class="ai" style="flex:15 1 0"></div>
+      </div>
+      <div class="list">
+        <div class="item"><span class="n">Clarity of offer</span><span class="w">20%</span><span class="d">Whether a stranger can say what you sell and who it is for after one screen.</span></div>
+        <div class="item"><span class="n">Visual consistency</span><span class="w">15%</span><span class="d">Colors, type, imagery and layout that look like one brand across pages and channels.</span></div>
+        <div class="item"><span class="n">Tone of voice</span><span class="w">10%</span><span class="d">Whether the writing sounds like one person or company everywhere.</span></div>
+        <div class="item"><span class="n">Trust signals</span><span class="w">15%</span><span class="d">Reviews, case studies, named people and policies that a visitor can check.</span></div>
+        <div class="item"><span class="n">Differentiation</span><span class="w">15%</span><span class="d">How different your promise reads from the competitors you name.</span></div>
+        <div class="item"><span class="n">Mobile experience</span><span class="w">10%</span><span class="d">Legibility, tap targets and message order on a phone screen.</span></div>
+        <div class="item"><span class="n" style="color:var(--pen-dark)">AI search visibility</span><span class="w">15%</span><span class="d">Whether AI assistants mention you, describe you correctly and recommend you. Reported as observations, since their answers change.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>How we will handle your site and your data</h2>
+      <div class="cols">
+        <div>
+          <h3>What we do</h3>
+          <ul>
+            <li>Read only public pages and respect each site's robots.txt.</li>
+            <li>Never use your content to train AI models.</li>
+            <li>Delete fetched pages and reports after 90 days unless you keep the audit in your account.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What a report cannot do</h3>
+          <ul>
+            <li>Promise more sales, better rankings or investor interest.</li>
+            <li>Replace legal advice or a trademark search.</li>
+            <li>Predict exactly what AI assistants will say tomorrow.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer">
+  <div class="wrap">
+    <div>
+      <p class="brand">Plainmark</p>
+      <p style="margin:10px 0 0">[Company legal name]<br>[Postal address]<br>[Support email]</p>
+    </div>
+    <nav aria-label="Legal">
+      <a href="#footer">Privacy Policy</a>
+      <a href="#footer">Do not sell or share my personal information</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Put the address of your form service here (for example a Formspree form).
+  var FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  var form = document.getElementById('waitlist');
+  var status = document.getElementById('status');
+  var btn = document.getElementById('submit');
+
+  function say(msg, kind) { status.textContent = msg; status.className = kind || ''; }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { say('Enter a valid email address, like you@yourbrand.com.', 'err'); return; }
+    if (!document.getElementById('consent').checked) { say('Tick the box to accept the Privacy Policy.', 'err'); return; }
+    if (document.getElementById('company').value) { return; }
+    if (FORM_ENDPOINT.indexOf('YOUR_FORM_ID') !== -1) { say('This form is not connected yet. Add your form address in index.html.', 'err'); return; }
+
+    btn.disabled = true; say('Sending...');
+    fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    }).then(function (r) {
+      if (r.ok) { form.reset(); say('You are on the list. We will email you once, when Plainmark opens.', 'ok'); }
+      else { say('Something went wrong and your email was not saved. Try again in a minute.', 'err'); }
+    }).catch(function () {
+      say('No connection. Check your internet and try again.', 'err');
+    }).then(function () { btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
